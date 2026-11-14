@@ -1,1618 +1,1398 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-<title>Maafin Aku 😭💙</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Untuk Kamu 🤎</title>
 
-<style>
 
-/* =========================
-   RESET
-========================= */
+  <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    /* =====================================================
+       RESET
+    ===================================================== */
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#cfe8ff;
-    color:#263b50;
-    overflow:hidden;
-}
-
-/* =========================
-   BACKGROUND
-========================= */
-
-body::before{
-    content:"";
-    position:fixed;
-    width:400px;
-    height:400px;
-    background:#ffffff55;
-    border-radius:50%;
-    top:-180px;
-    left:-120px;
-    z-index:0;
-}
-
-body::after{
-    content:"";
-    position:fixed;
-    width:350px;
-    height:350px;
-    background:#8fc8f055;
-    border-radius:50%;
-    bottom:-180px;
-    right:-100px;
-    z-index:0;
-}
-
-.bg-heart{
-    position:fixed;
-    font-size:20px;
-    opacity:.5;
-    animation:floatUp 7s linear infinite;
-    pointer-events:none;
-    z-index:1;
-}
-
-@keyframes floatUp{
-
-    from{
-        transform:translateY(100vh) rotate(0deg);
-        opacity:0;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    20%{
-        opacity:.6;
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
     }
 
-    to{
-        transform:translateY(-120vh) rotate(180deg);
-        opacity:0;
-    }
-}
 
-/* =========================
-   MUSIC BUTTON
-========================= */
+    body {
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-.music-btn{
-    position:fixed;
-    top:18px;
-    right:18px;
-    width:46px;
-    height:46px;
-    border:none;
-    border-radius:50%;
-    background:#397fb4;
-    color:white;
-    font-size:20px;
-    cursor:pointer;
-    z-index:50;
-    box-shadow:0 6px 18px #397fb455;
-    transition:.3s;
-}
+      overflow: hidden;
 
-.music-btn:hover{
-    transform:scale(1.08);
-}
-
-.music-btn.playing{
-    animation:musicPulse 1.2s infinite;
-}
-
-@keyframes musicPulse{
-
-    0%,100%{
-        box-shadow:0 6px 18px #397fb455;
+      background: #fff8e5;
     }
 
-    50%{
-        box-shadow:0 0 0 9px #397fb422,
-                   0 6px 25px #397fb477;
-    }
-}
 
-/* =========================
-   PAGE
-========================= */
-
-.page{
-    position:absolute;
-    inset:0;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    padding:20px;
-
-    opacity:0;
-    visibility:hidden;
-    transform:scale(.95);
-
-    transition:.5s ease;
-
-    z-index:5;
-}
-
-.page.active{
-    opacity:1;
-    visibility:visible;
-    transform:scale(1);
-}
-
-.container{
-    width:100%;
-    max-width:440px;
-    max-height:90vh;
-    overflow-y:auto;
-    scrollbar-width:none;
-}
-
-.container::-webkit-scrollbar{
-    display:none;
-}
-
-/* =========================
-   CARD
-========================= */
-
-.card{
-    background:#ffffffee;
-    border:3px solid white;
-    border-radius:30px;
-
-    padding:28px 22px;
-
-    text-align:center;
-
-    box-shadow:
-        0 20px 50px #4d82a533,
-        inset 0 0 0 1px #d5edff;
-}
-
-.title{
-    font-family:'Fredoka',sans-serif;
-    font-size:2rem;
-    line-height:1.15;
-    color:#24577e;
-    margin-bottom:10px;
-}
-
-.subtitle{
-    font-size:.85rem;
-    line-height:1.7;
-    color:#60778a;
-}
-
-.badge{
-    display:inline-block;
-    padding:7px 13px;
-    border-radius:30px;
-    background:#e4f3ff;
-    color:#3976a2;
-    font-size:.68rem;
-    font-weight:700;
-    margin-bottom:15px;
-}
-
-.big-emoji{
-    font-size:4.7rem;
-    display:block;
-    margin-bottom:10px;
-    animation:wiggle 2s infinite;
-}
-
-@keyframes wiggle{
-
-    0%,100%{
-        transform:rotate(0deg);
+    button {
+      font-family: inherit;
     }
 
-    25%{
-        transform:rotate(-8deg);
+
+
+    /* =====================================================
+       PAGE
+    ===================================================== */
+
+    .page {
+
+      width: 100%;
+      height: 100vh;
+
+      min-height: 600px;
+
+      display: none;
+
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(143, 166, 106, 0.25),
+          transparent 25%
+        ),
+
+        radial-gradient(
+          circle at 85% 80%,
+          rgba(107, 70, 54, 0.10),
+          transparent 25%
+        ),
+
+        #fff8e5;
     }
 
-    75%{
-        transform:rotate(8deg);
-    }
-}
 
-/* =========================
-   BUTTON
-========================= */
-
-.btn{
-    border:none;
-    padding:13px 20px;
-    border-radius:50px;
-    font-size:.82rem;
-    font-weight:700;
-    cursor:pointer;
-    transition:.25s;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-}
-
-.primary{
-    background:#397fb4;
-    color:white;
-    box-shadow:0 8px 18px #397fb433;
-}
-
-.secondary{
-    background:#eaf5fc;
-    color:#42677f;
-}
-
-.danger{
-    background:#ffdede;
-    color:#b85656;
-}
-
-.btn-group{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-top:22px;
-}
-
-/* =========================
-   PAGE 1
-========================= */
-
-.warning{
-    margin-top:20px;
-    padding:15px;
-
-    background:#fff8df;
-    border:2px dashed #f1cf68;
-    border-radius:18px;
-
-    color:#856d2d;
-    font-size:.75rem;
-    line-height:1.6;
-}
-
-.warning b{
-    display:block;
-    margin-bottom:5px;
-}
-
-/* =========================
-   PAGE 2
-========================= */
-
-.status-card{
-    margin-top:20px;
-    background:#f4faff;
-    border-radius:20px;
-    padding:16px;
-    text-align:left;
-}
-
-.status-line{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:9px 0;
-
-    border-bottom:1px dashed #c9deed;
-
-    font-size:.78rem;
-}
-
-.status-line:last-child{
-    border-bottom:none;
-}
-
-.tag{
-    padding:5px 9px;
-    border-radius:20px;
-
-    font-size:.62rem;
-    font-weight:700;
-}
-
-.red{
-    background:#ffe0e0;
-    color:#c05252;
-}
-
-.green{
-    background:#ddf7e7;
-    color:#38825b;
-}
-
-.yellow{
-    background:#fff0bd;
-    color:#92752b;
-}
-
-/* =========================
-   PAGE 3
-========================= */
-
-.ticket{
-    margin-top:18px;
-
-    background:#fffdf3;
-
-    border:2px dashed #c7b77c;
-    border-radius:12px;
-
-    padding:20px;
-
-    text-align:left;
-
-    transform:rotate(-1deg);
-}
-
-.ticket-header{
-    text-align:center;
-
-    font-family:'Fredoka',sans-serif;
-
-    font-size:1.2rem;
-    color:#735f27;
-
-    padding-bottom:12px;
-
-    border-bottom:2px solid #d8ca95;
-
-    margin-bottom:12px;
-}
-
-.ticket-row{
-    display:flex;
-    gap:8px;
-
-    font-size:.75rem;
-
-    margin:10px 0;
-
-    line-height:1.5;
-}
-
-.ticket-number{
-    font-weight:800;
-    color:#886f27;
-}
-
-.fine{
-    margin-top:15px;
-
-    padding:12px;
-
-    background:#fff1a9;
-
-    border-radius:10px;
-
-    text-align:center;
-
-    color:#755d17;
-
-    font-size:.75rem;
-
-    font-weight:700;
-}
-
-/* =========================
-   PAGE 4
-========================= */
-
-.final-box{
-    background:#eef8ff;
-
-    padding:20px;
-
-    border-radius:22px;
-
-    margin-top:18px;
-
-    font-size:.82rem;
-
-    line-height:1.8;
-
-    color:#597083;
-}
-
-.final-big{
-    font-family:'Fredoka',sans-serif;
-
-    font-size:1.8rem;
-
-    color:#28638c;
-
-    margin-bottom:10px;
-}
-
-.question{
-    font-family:'Fredoka',sans-serif;
-
-    font-size:1.45rem;
-
-    color:#285b80;
-
-    margin:18px 0 8px;
-}
-
-.small{
-    font-size:.72rem;
-    color:#8395a3;
-}
-
-#noBtn{
-    position:relative;
-}
-
-/* =========================
-   HEART METER
-========================= */
-
-.heart{
-    font-size:5rem;
-    animation:heartBeat 1.2s infinite;
-    margin:10px 0;
-}
-
-@keyframes heartBeat{
-
-    0%,100%{
-        transform:scale(1);
+    .page.active {
+      display: flex;
     }
 
-    50%{
-        transform:scale(1.15);
-    }
-}
 
-.meter{
-    height:22px;
-    width:100%;
 
-    background:#dceaf4;
+    /* =====================================================
+       DEKORASI BACKGROUND
+    ===================================================== */
 
-    border-radius:30px;
+    .decor {
 
-    overflow:hidden;
+      position: absolute;
 
-    margin:18px 0 8px;
-}
+      z-index: 1;
 
-.fill{
-    width:0%;
-    height:100%;
+      color: #8fa66a;
 
-    border-radius:30px;
+      opacity: 0.65;
 
-    background:linear-gradient(
-        90deg,
-        #478cc0,
-        #7bc5ee
-    );
+      pointer-events: none;
 
-    transition:width .2s;
-}
-
-.percent{
-    font-weight:800;
-    color:#3975a0;
-}
-
-/* =========================
-   POPUP
-========================= */
-
-.popup{
-    position:fixed;
-    inset:0;
-
-    background:#1d405e88;
-
-    display:none;
-
-    align-items:center;
-    justify-content:center;
-
-    z-index:100;
-
-    padding:20px;
-}
-
-.popup.show{
-    display:flex;
-}
-
-.popup-box{
-    width:100%;
-    max-width:350px;
-
-    background:white;
-
-    border-radius:28px;
-
-    padding:28px 22px;
-
-    text-align:center;
-
-    animation:popup .35s ease;
-}
-
-@keyframes popup{
-
-    from{
-        transform:scale(.7) rotate(-5deg);
-        opacity:0;
+      animation:
+        floating
+        3s
+        ease-in-out
+        infinite;
     }
 
-    to{
-        transform:scale(1) rotate(0);
-        opacity:1;
-    }
-}
 
-.popup-emoji{
-    font-size:3.5rem;
-    margin-bottom:10px;
-}
+    .decor-1 {
+      top: 12%;
+      left: 9%;
 
-.popup-title{
-    font-family:'Fredoka',sans-serif;
-
-    font-size:1.5rem;
-
-    color:#285e84;
-}
-
-.popup-text{
-    margin-top:8px;
-
-    font-size:.8rem;
-
-    line-height:1.7;
-
-    color:#657b8d;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:480px){
-
-    .card{
-        padding:24px 18px;
+      font-size: 30px;
     }
 
-    .title{
-        font-size:1.75rem;
+
+    .decor-2 {
+      top: 20%;
+      right: 12%;
+
+      font-size: 22px;
+
+      animation-delay: 0.5s;
     }
 
-    .big-emoji{
-        font-size:4rem;
+
+    .decor-3 {
+      bottom: 18%;
+      left: 14%;
+
+      font-size: 26px;
+
+      animation-delay: 1s;
     }
 
-    .music-btn{
-        width:42px;
-        height:42px;
-        top:14px;
-        right:14px;
-    }
-}
 
-</style>
+    .decor-4 {
+      bottom: 12%;
+      right: 12%;
+
+      font-size: 31px;
+
+      animation-delay: 1.5s;
+    }
+
+
+    .decor-5 {
+      top: 48%;
+      left: 6%;
+
+      font-size: 18px;
+
+      animation-delay: 2s;
+    }
+
+
+    .decor-6 {
+      top: 55%;
+      right: 7%;
+
+      font-size: 20px;
+
+      animation-delay: 0.8s;
+    }
+
+
+    @keyframes floating {
+
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+
+    }
+
+
+
+    /* =====================================================
+       CARD
+    ===================================================== */
+
+    .card {
+
+      width: 315px;
+
+      min-height: 450px;
+
+      padding:
+        28px
+        18px;
+
+      background:
+        rgba(
+          255,
+          243,
+          199,
+          0.97
+        );
+
+      border:
+        2px solid
+        #8fa66a;
+
+      border-radius: 14px;
+
+      box-shadow:
+        0 10px 30px
+        rgba(
+          107,
+          70,
+          54,
+          0.16
+        );
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      text-align: center;
+
+      position: relative;
+
+      z-index: 5;
+    }
+
+
+
+    /* =====================================================
+       PAGE 1
+       LOADING
+    ===================================================== */
+
+    .loading-card {
+
+      justify-content: center;
+    }
+
+
+    .loading-title {
+
+      margin-top: 10px;
+
+      color: #6b4636;
+
+      font-size: 27px;
+
+      font-weight: 800;
+    }
+
+
+    .loading-subtitle {
+
+      margin-top: 7px;
+
+      color: #657a45;
+
+      font-size: 15px;
+
+      font-weight: 600;
+    }
+
+
+
+    /* =====================================================
+       FORMAT GIF LOADING
+    ===================================================== */
+
+    .gif-loading {
+
+      width: 180px;
+
+      height: 180px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      overflow: hidden;
+
+      margin-bottom: 5px;
+
+      /*
+        GIF KAMU:
+
+        gif/loading.gif
+      */
+    }
+
+
+    .gif-loading img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: contain;
+
+      display: block;
+    }
+
+
+
+    /* =====================================================
+       LOADING BAR
+    ===================================================== */
+
+    .loading-bar {
+
+      width: 185px;
+
+      height: 8px;
+
+      margin-top: 25px;
+
+      background: #d9dfc7;
+
+      border-radius: 20px;
+
+      overflow: hidden;
+    }
+
+
+    .loading-progress {
+
+      width: 0%;
+
+      height: 100%;
+
+      background: #8fa66a;
+
+      border-radius: 20px;
+
+      animation:
+        loadingProgress
+        2.8s
+        linear
+        forwards;
+    }
+
+
+    @keyframes loadingProgress {
+
+      from {
+        width: 0%;
+      }
+
+      to {
+        width: 100%;
+      }
+
+    }
+
+
+
+    /* =====================================================
+       TITLE
+    ===================================================== */
+
+    .title {
+
+      color: #6b4636;
+
+      font-size: 31px;
+
+      font-weight: 800;
+
+      line-height: 1.2;
+    }
+
+
+    .subtitle {
+
+      margin-top: 6px;
+
+      color: #657a45;
+
+      font-size: 18px;
+
+      font-weight: 700;
+
+      line-height: 1.35;
+    }
+
+
+
+    /* =====================================================
+       FORMAT GIF PERTANYAAN
+    ===================================================== */
+
+    .gif-question {
+
+      width: 235px;
+
+      height: 235px;
+
+      margin-top: 10px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      overflow: hidden;
+
+      /*
+        GIF KAMU:
+
+        gif/question.gif
+      */
+    }
+
+
+    .gif-question img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: contain;
+
+      display: block;
+    }
+
+
+
+    /* =====================================================
+       BUTTON AREA
+    ===================================================== */
+
+    .buttons {
+
+      width: 100%;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 10px;
+
+      margin-top: 4px;
+    }
+
+
+    .buttons button {
+
+      border: none;
+
+      padding:
+        11px
+        27px;
+
+      border-radius: 8px;
+
+      color: #fff8e5;
+
+      font-size: 16px;
+
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        transform
+        0.15s
+        ease,
+
+        background
+        0.2s
+        ease;
+    }
+
+
+    .buttons button:active {
+
+      transform:
+        scale(0.92);
+    }
+
+
+
+    /* =====================================================
+       BUTTON MAUU
+    ===================================================== */
+
+    .yes-button {
+
+      background: #8fa66a;
+    }
+
+
+    .yes-button:hover {
+
+      background: #657a45;
+    }
+
+
+
+    /* =====================================================
+       BUTTON ENGGAA
+    ===================================================== */
+
+    .no-button {
+
+      background: #9b7059;
+
+      position: relative;
+    }
+
+
+    .no-button:hover {
+
+      background: #6b4636;
+    }
+
+
+
+    /* =====================================================
+       TEXT KECIL
+    ===================================================== */
+
+    .small-text {
+
+      margin-top: 17px;
+
+      color: #8b6a56;
+
+      font-size: 13px;
+    }
+
+
+
+    /* =====================================================
+       PAGE 3
+       THANKS
+    ===================================================== */
+
+    .gif-thanks {
+
+      width: 240px;
+
+      height: 240px;
+
+      margin-top: 8px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      overflow: hidden;
+
+      /*
+        GIF KAMU:
+
+        gif/thanks.gif
+      */
+    }
+
+
+    .gif-thanks img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: contain;
+
+      display: block;
+    }
+
+
+
+    /* =====================================================
+       MESSAGE
+    ===================================================== */
+
+    .message {
+
+      margin-top: 0;
+
+      color: #657a45;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+
+    .message-name {
+
+      margin-bottom: 5px;
+
+      color: #6b4636;
+
+      font-size: 18px;
+
+      font-weight: 800;
+    }
+
+
+
+    /* =====================================================
+       BUTTON MULAI LAGI
+    ===================================================== */
+
+    .back-button {
+
+      margin-top: 15px;
+
+      padding:
+        9px
+        20px;
+
+      border-radius: 8px;
+
+      border:
+        2px solid
+        #8fa66a;
+
+      background: transparent;
+
+      color: #657a45;
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        0.2s ease;
+    }
+
+
+    .back-button:hover {
+
+      background: #d9dfc7;
+    }
+
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 480px) {
+
+      .page {
+
+        min-height: 100vh;
+      }
+
+
+      .card {
+
+        width: 310px;
+
+        min-height: 440px;
+      }
+
+
+      .title {
+
+        font-size: 29px;
+      }
+
+
+      .subtitle {
+
+        font-size: 17px;
+      }
+
+
+      .gif-question {
+
+        width: 220px;
+
+        height: 220px;
+      }
+
+
+      .gif-thanks {
+
+        width: 225px;
+
+        height: 225px;
+      }
+
+
+      .decor-1 {
+
+        left: 5%;
+      }
+
+
+      .decor-2 {
+
+        right: 5%;
+      }
+
+
+      .decor-3 {
+
+        left: 7%;
+      }
+
+
+      .decor-4 {
+
+        right: 6%;
+      }
+
+    }
+
+
+
+    /* =====================================================
+       HP KECIL
+    ===================================================== */
+
+    @media (max-width: 350px) {
+
+      .card {
+
+        width: 290px;
+
+        min-height: 420px;
+
+        padding-left: 12px;
+
+        padding-right: 12px;
+      }
+
+
+      .gif-loading {
+
+        width: 165px;
+
+        height: 165px;
+      }
+
+
+      .gif-question {
+
+        width: 205px;
+
+        height: 205px;
+      }
+
+
+      .gif-thanks {
+
+        width: 210px;
+
+        height: 210px;
+      }
+
+
+      .title {
+
+        font-size: 27px;
+      }
+
+
+      .subtitle {
+
+        font-size: 16px;
+      }
+
+
+      .buttons button {
+
+        padding:
+          10px
+          22px;
+      }
+
+    }
+
+  </style>
+
 </head>
+
+
 
 <body>
 
-<!-- =========================
-     MUSIC
-========================= -->
 
-<audio id="bgMusic" loop autoplay>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
+  <!-- =====================================================
+       PAGE 1
+       LOADING
+  ====================================================== -->
 
-<button
-    class="music-btn"
-    id="musicBtn"
-    onclick="toggleMusic()"
-    aria-label="Musik">
-    🔊
-</button>
+  <section
+    class="page page-1 active"
+  >
 
+    <!-- Background -->
+    <div class="decor decor-1">♡</div>
 
-<!-- =========================
-     FLOATING BACKGROUND
-========================= -->
+    <div class="decor decor-2">✦</div>
 
-<div class="bg-heart" style="left:8%;animation-delay:0s;">💙</div>
-<div class="bg-heart" style="left:25%;animation-delay:2s;">✨</div>
-<div class="bg-heart" style="left:48%;animation-delay:4s;">🤍</div>
-<div class="bg-heart" style="left:70%;animation-delay:1s;">💙</div>
-<div class="bg-heart" style="left:90%;animation-delay:3s;">✨</div>
+    <div class="decor decor-3">♡</div>
 
+    <div class="decor decor-4">✦</div>
 
-<!-- ==================================================
-     PAGE 1
-================================================== -->
+    <div class="decor decor-5">♡</div>
 
-<section class="page active" id="page1">
+    <div class="decor decor-6">✦</div>
 
-<div class="container">
 
-<div class="card">
+    <div
+      class="card loading-card"
+    >
 
-<span class="big-emoji">🚨</span>
 
-<span class="badge">
-EMERGENCY RELATIONSHIP SYSTEM
-</span>
+      <!-- =================================================
+           TEMPAT GIF LOADING
+           
+           Masukkan file:
+           gif/loading.gif
+      ================================================== -->
 
-<h1 class="title">
-WARNING!<br>
-PACAR SEDANG NGAMBEK 😭
-</h1>
+      <div class="gif-loading">
 
-<p class="subtitle">
+        <img
+          src="icon1.webp"
+          alt="Loading GIF"
+        >
 
-Sistem mendeteksi adanya seseorang
-yang melakukan kesalahan dan sekarang
-sedang panik mencari cara untuk minta maaf.
+      </div>
 
-</p>
 
-<div class="warning">
+      <h1 class="loading-title">
+        Tunggu sebentar...
+      </h1>
 
-<b>⚠️ PERINGATAN</b>
 
-Jangan tutup website ini sebelum
-permintaan maaf selesai diproses.
+      <p class="loading-subtitle">
+        ada sesuatu buat kamu
+      </p>
 
-<br>
 
-Status pelaku:
-<b style="margin-top:5px;">
-PANIK + TAKUT DITINGGAL 😭
-</b>
+      <!-- Loading bar -->
 
-</div>
+      <div class="loading-bar">
 
-<div class="btn-group">
+        <div
+          class="loading-progress"
+        ></div>
 
-<button
-class="btn primary"
-onclick="startMusic();nextPage()">
+      </div>
 
-Periksa Kondisi 😭
 
-</button>
+    </div>
 
-</div>
+  </section>
 
-</div>
 
-</div>
 
-</section>
+  <!-- =====================================================
+       PAGE 2
+       PERTANYAAN
+  ====================================================== -->
 
+  <section
+    class="page page-2"
+  >
 
-<!-- ==================================================
-     PAGE 2
-================================================== -->
 
-<section class="page" id="page2">
+    <!-- Background -->
 
-<div class="container">
+    <div class="decor decor-1">♡</div>
 
-<div class="card">
+    <div class="decor decor-2">✦</div>
 
-<span class="big-emoji">🩺</span>
+    <div class="decor decor-3">♡</div>
 
-<span class="badge">
-HASIL PEMERIKSAAN
-</span>
+    <div class="decor decor-4">✦</div>
 
-<h1 class="title">
-Diagnosis Pacar
-</h1>
+    <div class="decor decor-5">♡</div>
 
-<div class="status-card">
+    <div class="decor decor-6">✦</div>
 
-<div class="status-line">
 
-<span>❤️ Rasa sayang</span>
 
-<span class="tag green">
-MASIH ADA
-</span>
+    <div class="card">
 
-</div>
 
+      <h1 class="title">
+        Hai kamu,
+      </h1>
 
-<div class="status-line">
 
-<span>😤 Tingkat kesel</span>
+      <h2 class="subtitle">
+        Kamu mau jadi pacarku?
+      </h2>
 
-<span class="tag red">
-87%
-</span>
 
-</div>
 
+      <!-- =================================================
+           TEMPAT GIF PERTANYAAN
 
-<div class="status-line">
+           Masukkan file:
+           gif/question.gif
+      ================================================== -->
 
-<span>🥺 Kemungkinan luluh</span>
+      <div class="gif-question">
 
-<span class="tag yellow">
-TERGANTUNG
-</span>
+        <img
+          src="icon2.webp"
+          alt="Question GIF"
+        >
 
-</div>
+      </div>
 
 
-<div class="status-line">
 
-<span>🧠 Kesabaran</span>
+      <!-- =================================================
+           BUTTON
+      ================================================== -->
 
-<span class="tag red">
-HAMPIR HABIS
-</span>
+      <div class="buttons">
 
-</div>
 
-</div>
+        <button
+          class="yes-button"
+          id="yesButton"
+        >
+          Mauu
+        </button>
 
 
-<p
-class="subtitle"
-style="margin-top:18px;">
+        <button
+          class="no-button"
+          id="noButton"
+        >
+          Enggaa
+        </button>
 
-Kesimpulan dokter:
 
-<br>
+      </div>
 
-<b>
-Pasien sebenarnya masih sayang,
-tapi gengsinya sedang tinggi.
-</b>
 
-😂
+      <p class="small-text">
+        jangan lama-lama mikirnya...
+      </p>
 
-</p>
 
+    </div>
 
-<div class="btn-group">
+  </section>
 
-<button
-class="btn primary"
-onclick="nextPage()">
 
-Lihat Bukti Kejahatan 👉
 
-</button>
+  <!-- =====================================================
+       PAGE 3
+       MAKASII
+  ====================================================== -->
 
-</div>
+  <section
+    class="page page-3"
+  >
 
-</div>
 
-</div>
+    <!-- Background -->
 
-</section>
+    <div class="decor decor-1">♡</div>
 
+    <div class="decor decor-2">✦</div>
 
-<!-- ==================================================
-     PAGE 3
-================================================== -->
+    <div class="decor decor-3">♡</div>
 
-<section class="page" id="page3">
+    <div class="decor decor-4">✦</div>
 
-<div class="container">
+    <div class="decor decor-5">♡</div>
 
-<div class="card">
+    <div class="decor decor-6">✦</div>
 
-<span class="big-emoji">
-🧾
-</span>
 
-<span class="badge">
-DOKUMEN NEGARA
-</span>
 
-<h1 class="title">
-SURAT TILANG PACAR
-</h1>
+    <div class="card">
 
-<p class="subtitle">
 
-Nomor perkara:
-<b>MAAF-001</b>
+      <h1 class="title">
+        Makasii!
+      </h1>
 
-</p>
 
+      <h2 class="subtitle">
+        akhirnya kamu bilang mau
+      </h2>
 
-<div class="ticket">
 
-<div class="ticket-header">
-SURAT TILANG PELANGGARAN HUBUNGAN
-</div>
 
+      <!-- =================================================
+           TEMPAT GIF THANKS
 
-<div class="ticket-row">
+           Masukkan file:
+           gif/thanks.gif
+      ================================================== -->
 
-<span class="ticket-number">
-01.
-</span>
+      <div class="gif-thanks">
 
-<span>
-Terdakwa terbukti telah membuat
-pacarnya kesel.
-</span>
+        <img
+          src="icon3.webp"
+          alt="Thanks GIF"
+        >
 
-</div>
+      </div>
 
 
-<div class="ticket-row">
 
-<span class="ticket-number">
-02.
-</span>
+      <!-- =================================================
+           PESAN
+      ================================================== -->
 
-<span>
-Terdakwa menyebabkan korban
-overthinking.
-</span>
+      <div class="message">
 
-</div>
 
+        <p>
 
-<div class="ticket-row">
+          Makasih yaa udah mau.
 
-<span class="ticket-number">
-03.
-</span>
+          <br>
 
-<span>
-Terdakwa masih berani santai
-setelah melakukan kesalahan.
-</span>
+          Semoga kita bisa saling cerita,
 
-</div>
+          <br>
 
+          saling ngerti,
 
-<div class="ticket-row">
+          <br>
 
-<span class="ticket-number">
-04.
-</span>
+          dan saling nemenin.
 
-<span>
-Terdakwa sekarang sedang
-minta maaf sambil berharap
-tidak ditinggal.
-</span>
+        </p>
 
-</div>
 
+      </div>
 
-<div class="fine">
 
-DENDA:
 
-<br>
+      <!-- =================================================
+           BUTTON MULAI LAGI
+      ================================================== -->
 
-1x minta maaf
-<br>
+      <button
+        class="back-button"
+        id="backButton"
+      >
+        mulai lagi
+      </button>
 
-+ 1x peluk
-<br>
 
-+ jangan diulangi lagi 😭
+    </div>
 
-</div>
+  </section>
 
-</div>
 
 
-<div class="btn-group">
+  <!-- =====================================================
+       MUSIK
+       
+       Masukkan file:
+       music.mp3
+  ====================================================== -->
 
-<button
-class="btn primary"
-onclick="nextPage()">
+  <audio
+    id="backgroundMusic"
+    src="music.mp3"
+    loop
+    preload="auto"
+  ></audio>
 
-Masuk Ruang Sidang ⚖️
 
-</button>
 
-</div>
+  <script>
 
-</div>
 
-</div>
+    /* =====================================================
+       AMBIL PAGE
+    ===================================================== */
 
-</section>
+    const page1 =
+      document.querySelector(".page-1");
 
+    const page2 =
+      document.querySelector(".page-2");
 
-<!-- ==================================================
-     PAGE 4
-================================================== -->
+    const page3 =
+      document.querySelector(".page-3");
 
-<section class="page" id="page4">
 
-<div class="container">
 
-<div class="card">
+    /* =====================================================
+       FUNGSI PINDAH PAGE
+    ===================================================== */
 
-<div class="heart">
-🫂
-</div>
+    function showPage(pageNumber) {
 
-<span class="badge">
-KEPUTUSAN TERAKHIR
-</span>
 
-<h1 class="title">
-Aku Beneran Minta Maaf 🥺
-</h1>
+      page1.classList.remove("active");
 
+      page2.classList.remove("active");
 
-<div
-class="final-box"
-style="text-align:left;">
+      page3.classList.remove("active");
 
-<p>
-Sayang...
-</p>
 
-<br>
+      if (pageNumber === 1) {
 
-<p>
+        page1.classList.add("active");
 
-Aku tahu aku salah.
+      }
 
-Aku tahu apa yang aku lakuin
-bikin kamu kesel, sedih,
-atau bahkan kepikiran.
 
-</p>
+      if (pageNumber === 2) {
 
-<br>
+        page2.classList.add("active");
 
-<p>
+      }
 
-Aku nggak mau cari alasan.
 
-Aku cuma mau bilang:
+      if (pageNumber === 3) {
 
-<b>
-maafin aku ya.
-</b>
+        page3.classList.add("active");
 
-</p>
-
-<br>
-
-<p>
-
-Aku mungkin kadang ngeselin,
-kadang bikin kamu pengen ngomel,
-
-tapi aku nggak pernah punya niat
-buat bikin kamu merasa nggak dihargai.
-
-</p>
-
-<br>
-
-<p>
-
-Jadi untuk kesalahan aku kali ini...
-
-<b>
-aku benar-benar minta maaf.
-</b>
-
-🥺💙
-
-</p>
-
-</div>
-
-
-<h2 class="question">
-Kamu maafin aku nggak? 🥺
-</h2>
-
-<p class="small">
-
-Pilih dengan jujur...
-
-tapi jangan tega ya 😭
-
-</p>
-
-
-<div class="btn-group">
-
-<button
-class="btn primary"
-onclick="forgive()">
-
-Iya, aku maafin 🥺
-
-</button>
-
-
-<button
-class="btn danger"
-id="noBtn"
-onclick="runAway()">
-
-Belum 😐
-
-</button>
-
-</div>
-
-
-<p
-id="noText"
-class="small"
-style="margin-top:18px;">
-
-Tombol "belum" masih tersedia...
-untuk sementara. 👀
-
-</p>
-
-
-<div
-class="meter"
-style="margin-top:25px;">
-
-<div
-class="fill"
-id="fill">
-</div>
-
-</div>
-
-
-<div
-class="percent"
-id="percent">
-
-0%
-
-</div>
-
-
-<div class="btn-group">
-
-<button
-class="btn secondary"
-onclick="showPopup()">
-
-🫂 Peluk Sekarang
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ==================================================
-     POPUP
-================================================== -->
-
-<div
-class="popup"
-id="popup">
-
-<div class="popup-box">
-
-<div class="popup-emoji">
-🫂💙
-</div>
-
-<div class="popup-title">
-PELUkan BERHASIL DIKIRIM!
-</div>
-
-<div class="popup-text">
-
-Pelukan virtual telah dikirim
-dengan tingkat kehangatan:
-
-<br><br>
-
-<b
-style="font-size:1.3rem;color:#3475a0;">
-
-1000000%
-
-</b>
-
-<br><br>
-
-Sekarang udah nggak boleh
-marah lagi ya. 😭
-
-<br><br>
-
-Aku sayang kamu. 💙
-
-</div>
-
-
-<div class="btn-group">
-
-<button
-class="btn primary"
-onclick="closePopup()">
-
-Baiklah 😭
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<script>
-
-/* ==================================================
-   MUSIC SYSTEM
-================================================== */
-
-const bgMusic =
-    document.getElementById("bgMusic");
-
-const musicBtn =
-    document.getElementById("musicBtn");
-
-let musicStarted = false;
-
-
-/*
-   Browser HP biasanya memblokir
-   autoplay bersuara.
-
-   Karena itu musik akan:
-   1. mencoba autoplay sendiri
-   2. otomatis mulai ketika user
-      menekan tombol pertama
-*/
-
-window.addEventListener("load", () => {
-
-    bgMusic.volume = 0.45;
-
-    const playPromise =
-        bgMusic.play();
-
-    if(playPromise !== undefined){
-
-        playPromise
-        .then(() => {
-
-            musicStarted = true;
-
-            musicBtn.innerText = "🔊";
-
-            musicBtn.classList.add("playing");
-
-        })
-        .catch(() => {
-
-            musicStarted = false;
-
-            musicBtn.innerText = "🔇";
-
-        });
+      }
 
     }
 
-});
 
 
-function startMusic(){
+    /* =====================================================
+       LOADING 2.8 DETIK
+    ===================================================== */
 
-    if(bgMusic.paused){
+    setTimeout(
+      function () {
 
-        bgMusic.volume = 0.45;
+        showPage(2);
 
-        bgMusic.play()
-        .then(() => {
+      },
+      2800
+    );
 
-            musicStarted = true;
 
-            musicBtn.innerText = "🔊";
 
-            musicBtn.classList.add("playing");
+    /* =====================================================
+       MUSIK
+    ===================================================== */
 
-        })
-        .catch(() => {
+    const music =
+      document.getElementById(
+        "backgroundMusic"
+      );
 
-            console.log("Musik belum bisa diputar.");
 
-        });
+    function startMusic() {
+
+      if (!music) return;
+
+
+      music.volume = 0.7;
+
+
+      music
+        .play()
+        .catch(
+          function () {}
+        );
 
     }
 
-}
 
 
-function toggleMusic(){
+    /* =====================================================
+       BUTTON MAUU
+    ===================================================== */
 
-    if(bgMusic.paused){
+    const yesButton =
+      document.getElementById(
+        "yesButton"
+      );
+
+
+    yesButton.addEventListener(
+      "click",
+      function () {
+
+
+        /* mulai musik */
 
         startMusic();
 
-    }else{
 
-        bgMusic.pause();
+        /* pindah ke page 3 */
 
-        musicBtn.innerText = "🔇";
+        showPage(3);
 
-        musicBtn.classList.remove("playing");
-
-    }
-
-}
+      }
+    );
 
 
-/* ==================================================
-   PAGE SYSTEM
-================================================== */
 
-let currentPage = 1;
+    /* =====================================================
+       BUTTON ENGGAA
+       KABUR SAAT DISENTUH / DIARAHKAN
+    ===================================================== */
 
-const totalPages = 4;
-
-
-function nextPage(){
-
-    startMusic();
-
-    if(currentPage >= totalPages){
-        return;
-    }
-
-    document
-    .getElementById("page" + currentPage)
-    .classList.remove("active");
+    const noButton =
+      document.getElementById(
+        "noButton"
+      );
 
 
-    currentPage++;
+    function moveNoButton() {
 
 
-    document
-    .getElementById("page" + currentPage)
-    .classList.add("active");
+      const buttonWidth = 100;
 
-}
+      const buttonHeight = 45;
 
 
-/* ==================================================
-   BUTTON "BELUM"
-================================================== */
-
-let noCount = 0;
-
-
-function runAway(){
-
-    startMusic();
-
-    const btn =
-        document.getElementById("noBtn");
-
-    const text =
-        document.getElementById("noText");
+      const maxX =
+        window.innerWidth
+        -
+        buttonWidth
+        -
+        20;
 
 
-    noCount++;
+      const maxY =
+        window.innerHeight
+        -
+        buttonHeight
+        -
+        20;
 
 
-    const messages = [
-
-        "Yakin belum? 🥺",
-
-        "Tombolnya mulai takut nih 😭",
-
-        "Jangan ditekan terus dong 😭",
-
-        "Aku udah minta maaf loh 🥺",
-
-        "Tolong kasih kesempatan 😭",
-
-        "Aku janji nggak ngulangin lagi 💙",
-
-        "Kok masih belum sih 😭",
-
-        "Oke aku nangis beneran nih 🥲"
-
-    ];
+      const randomX =
+        Math.max(
+          10,
+          Math.random() * maxX
+        );
 
 
-    text.innerText =
-        messages[
-            Math.min(
-                noCount - 1,
-                messages.length - 1
-            )
-        ];
+      const randomY =
+        Math.max(
+          10,
+          Math.random() * maxY
+        );
 
 
-    const x =
-        (Math.random() * 220) - 110;
+      noButton.style.position =
+        "fixed";
 
 
-    const y =
-        (Math.random() * 100) - 50;
+      noButton.style.left =
+        randomX + "px";
 
 
-    btn.style.transform =
-        `translate(${x}px,${y}px)`;
+      noButton.style.top =
+        randomY + "px";
 
 
-    if(noCount >= 5){
-
-        btn.innerText =
-            "Yaudah deh 😭";
+      noButton.style.zIndex =
+        "9999";
 
     }
 
-}
 
 
-/* ==================================================
-   FORGIVE
-================================================== */
+    /* Desktop */
 
-function forgive(){
+    noButton.addEventListener(
+      "mouseenter",
+      moveNoButton
+    );
 
-    startMusic();
 
-    startMeter();
 
-    createConfetti();
+    /* HP */
 
-}
+    noButton.addEventListener(
+      "touchstart",
+      function (event) {
 
+        event.preventDefault();
 
-/* ==================================================
-   HEART METER
-================================================== */
+        moveNoButton();
 
-function startMeter(){
+      }
+    );
 
-    let value = 0;
 
-    const fill =
-        document.getElementById("fill");
 
-    const percent =
-        document.getElementById("percent");
+    /* =====================================================
+       BUTTON MULAI LAGI
+    ===================================================== */
 
+    const backButton =
+      document.getElementById(
+        "backButton"
+      );
 
-    const interval =
-        setInterval(() => {
 
-            value += 2;
+    backButton.addEventListener(
+      "click",
+      function () {
 
 
-            fill.style.width =
-                value + "%";
+        /* Kembalikan posisi tombol */
 
+        noButton.style.position =
+          "relative";
 
-            percent.innerText =
-                value + "%";
 
+        noButton.style.left =
+          "auto";
 
-            if(value >= 100){
 
-                clearInterval(interval);
+        noButton.style.top =
+          "auto";
 
-                percent.innerText =
-                    "100% — AMAN 💙";
 
-            }
+        /* kembali ke pertanyaan */
 
-        },30);
+        showPage(2);
 
-}
+      }
+    );
 
 
-/* ==================================================
-   CONFETTI
-================================================== */
 
-function createConfetti(){
+    /* =====================================================
+       MUSIK SAAT USER BERINTERAKSI
+       
+       Browser HP sering memblokir autoplay.
+       Karena itu musik juga dicoba setelah
+       interaksi pertama.
+    ===================================================== */
 
-    const items = [
+    document.addEventListener(
+      "click",
+      function () {
 
-        "💙",
-        "✨",
-        "🎉",
-        "🤍",
-        "🥺",
-        "🫂"
 
-    ];
+        if (
+          music &&
+          music.paused
+        ) {
 
-
-    for(let i = 0; i < 25; i++){
-
-        const item =
-            document.createElement("div");
-
-
-        item.className =
-            "bg-heart";
-
-
-        item.innerText =
-            items[
-                Math.floor(
-                    Math.random() *
-                    items.length
-                )
-            ];
-
-
-        item.style.left =
-            Math.random() * 100 + "vw";
-
-
-        item.style.animationDuration =
-            (3 + Math.random() * 4) + "s";
-
-
-        item.style.fontSize =
-            (15 + Math.random() * 20) + "px";
-
-
-        document.body.appendChild(item);
-
-
-        setTimeout(() => {
-
-            item.remove();
-
-        },7000);
-
-    }
-
-}
-
-
-/* ==================================================
-   POPUP
-================================================== */
-
-function showPopup(){
-
-    startMusic();
-
-    document
-    .getElementById("popup")
-    .classList.add("show");
-
-
-    createConfetti();
-
-}
-
-
-function closePopup(){
-
-    document
-    .getElementById("popup")
-    .classList.remove("show");
-
-}
-
-
-/* ==================================================
-   RANDOM FLOATING HEARTS
-================================================== */
-
-setInterval(() => {
-
-    if(Math.random() > .45){
-
-        const item =
-            document.createElement("div");
-
-
-        item.className =
-            "bg-heart";
-
-
-        item.innerText =
-            Math.random() > .5
-            ? "💙"
-            : "✨";
-
-
-        item.style.left =
-            Math.random() * 100 + "vw";
-
-
-        item.style.animationDuration =
-            (5 + Math.random() * 3) + "s";
-
-
-        document.body.appendChild(item);
-
-
-        setTimeout(() => {
-
-            item.remove();
-
-        },8000);
-
-    }
-
-},3000);
-
-
-/* ==================================================
-   START MUSIC WHEN USER INTERACTS
-================================================== */
-
-document.addEventListener(
-    "click",
-    () => {
-
-        if(bgMusic.paused){
-
-            bgMusic.play()
-            .then(() => {
-
-                musicStarted = true;
-
-                musicBtn.innerText = "🔊";
-
-                musicBtn.classList.add("playing");
-
-            })
-            .catch(() => {});
+          music
+            .play()
+            .catch(
+              function () {}
+            );
 
         }
 
-    },
-    {once:false}
-);
+      },
+      {
+        once: true
+      }
+    );
 
-</script>
+
+  </script>
+
 
 </body>
 </html>
